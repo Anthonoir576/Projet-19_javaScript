@@ -17,6 +17,8 @@ body {
     width: 100vw;
     height: 100vh;
 
+    position: relative;
+
 }
 
 
@@ -86,6 +88,8 @@ footer {
     text-align: center;
     color: white;
     text-shadow: 0 1px 10px black;
+    
+    width: 100%;
 
     hr {
 
@@ -93,6 +97,12 @@ footer {
         border: 1px solid white;
         margin: 0 0 10px 0;
         padding: 0;
+
+    }
+
+    & p {
+
+        margin: 0;
 
     }
 
@@ -157,14 +167,26 @@ footer {
 
 .noResult {
 
-    font-size: 4rem;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+   
+    text-shadow: 0 2px 10px black;
+    border-top: 3px solid rgb(255, 255, 255);
+    border-bottom: 3px solid rgb(255, 255, 255);
+
+    background: rgba(34, 34, 34, 0.795);
+    width: 100%;
 
 }
 
 .searchContainer {
 
     flex: 1 0 18%;
-    background: rgba(128, 128, 128, 0.4);
+    background: rgba(128, 128, 128, 0.5);
+    color: black;
+    text-shadow: 0 1px 2px white;
     margin: .5rem;
     padding: 1rem 0;
     border-radius: 5px;
