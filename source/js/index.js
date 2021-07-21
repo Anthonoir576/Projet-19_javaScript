@@ -6,10 +6,10 @@ const randomMeal = document.getElementById('randomMeal');
 let search = '';
 
 // on recupere l'api on lui disant va chercher !
-const fetchSearch = async() => {
+const fetchSearch = async(url) => {
 
     meals = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+        `https://www.themealdb.com/api/json/v1/1/${url}`)
         .then(res => res.json())
         .then(res => res.meals)
         console.log(meals);
@@ -20,7 +20,7 @@ const fetchSearch = async() => {
 // SEARCH
 const searchDisplay = async() => {
 
-    await fetchSearch();
+    await fetchSearch(search);
 
     if (meals == null) {
 
@@ -52,11 +52,11 @@ const searchDisplay = async() => {
 // recupere la valeur de linput, et relance la recherche a chaque caractere modifier ou supprimer
 searchInput.addEventListener('input', (e) => {
 
-    search = e.target.value;
+    search = `search.php?s=${e.target.value}`;
     searchDisplay();
 
 });
 
-fetchSearch()
+
 
 //RANDOM MEAL www.themealdb.com/api/json/v1/1/random.php
